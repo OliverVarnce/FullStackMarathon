@@ -1,0 +1,56 @@
+table {
+    text-align: center;
+    color: #000;
+    border-collapse: collapse;
+}
+
+tbody {
+    border-spacing: 7px 11px;
+}
+
+th {
+    background-color: #000;
+    color: #fff;
+    border: 0;
+    border-collapse: initial;
+}
+
+td {
+    border: 2px solid #ccc;
+    padding: 0px 15px;
+}
+
+img {
+    width: 120px;
+    height: 120px;
+    border-radius: 25px;
+    padding: 8px 10px;
+}
+
+#link {
+    padding: 10px 0px;
+}
+
+#orange {
+    background-color: orange;
+}
+
+#green {
+    background-color: green;
+}
+
+#blue {
+    background-color: blue;
+}
+
+#yellow {
+    background-color: yellow
+}
+
+#red {
+    background-color: red
+}
+
+#purple {
+    background-color: purple
+}

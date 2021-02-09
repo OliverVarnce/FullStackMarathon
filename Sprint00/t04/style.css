@@ -1,0 +1,82 @@
+body {font-family: Verdana;}
+div {position: relative;float: left;}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.grid div{
+    margin: 40px;
+    height: 140px;
+    width: 270px;
+    position: relative;
+    border-radius: 5px;
+
+}
+
+.block div {
+    width: 270px;
+    height: 140px;
+}
+
+.block, .block div {
+    float: left;
+    position: relative;
+}
+
+
+.cap{background: linear-gradient(#4568DC, #B06AB3 );}
+.ironman{background: linear-gradient(#e52d27, #b31217 );}
+.blackwidow{background: linear-gradient(#000, #61045F );}
+.spiderman{background: linear-gradient(#e52d27, #000 );}
+/*------------------image------------*/
+.img {
+    height: 182px;
+    position: absolute;
+    bottom: -11px;
+    transform: scale(0.87);
+}
+
+.spider {
+    height: 182px;
+    position: absolute;
+    top: -11px;
+    transform: scale(0.87);
+}
+
+/*----------------text-----------------*/
+.nick {
+    margin: 10px 10px 0 0;
+    font-size: 12px;
+    text-align: right;
+    color: white;
+}
+.name {
+    margin: 0 10px 0 0;
+    font-size: 9px;
+    text-align: right;
+    color: rgba(255, 255,255, 0.5);
+
+}
+
+
+/*-----------------------adaptive---------------*/
+
+@media screen and (min-width: 1250px){
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (max-width: 1250px) and (min-width: 600px){
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 600px) and (min-width: 200px){
+    .grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

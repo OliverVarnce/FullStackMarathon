@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    margin-left: 66px;
+    margin-bottom: 47px;
+}
+
+.box {
+    height: 50px;
+    width: calc(100vw - 200px);
+    position: relative;
+    margin: 0 auto;
+    background-color: #DDDDDD;
+    border: 1px solid black;
+    padding: 15px 0 0 20px;
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    width: calc(100vw - 202px);
+    height: 100px;
+    top: -24px;
+    left: -1px;
+    border-left: 1px solid #868786;
+    border-right: 1px solid #868786;
+}
+
+.box::after {
+    content: '';
+    position: absolute;
+    top: -1px;
+    right: -26px;
+    height: 48px;
+    width: calc(100vw - 150px);
+    border-top: 1px solid #868786;
+    border-bottom: 1px solid #868786;
+}

@@ -1,0 +1,28 @@
+@keyframes circle {
+  0% {
+    margin-left: 0%;
+  }
+
+  100% {
+    margin-left: calc(100% - 150px);
+  }
+}
+
+.circle {
+  height: 150px;
+  width: 150px;
+  background-color: green;
+  border-radius: 100%;
+  position: absolute;
+  animation-name: circle;
+  animation-duration: 4s;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+}
+
+.circle:hover {
+  background-color: red;
+  transition: 1s;
+}

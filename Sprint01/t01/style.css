@@ -1,0 +1,9 @@
+.image {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+}
+
+.image:hover {
+    transform: rotate(-30deg);
+}

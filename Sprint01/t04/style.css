@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+h3 {
+  text-align: center;
+}
+
+input {
+  font-family: "Times New Roman";
+}
+
+input::placeholder {
+  color: #0e20d9;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.block {
+  margin: 20px;
+  width: 350px;
+  height: 270px;
+  border: 1px solid black;
+  float: left;
+}
+
+.block p,
+.block form,
+.block h1 {
+  padding: 0 0 0 10px;
+}
+
+.term {
+  font-family: 'Inconsolata', monospace;
+}
+
+/*-------------adaptive--------------*/
+
+@media screen and (max-width: 1024px) and (min-width: 930px) {
+  .main {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (max-width: 930px) and ( min-width:570px) {
+  .main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 570px) and (min-width: 320px) {
+  .main {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

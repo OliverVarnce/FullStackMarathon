@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="t22. Settings">
+  <title>Settings</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <h1>Settings</h1>
+  <form action="#" method="POST">
+    <div class="window">
+      <div class="settings">
+
+        <!-- Typeface -->
+        <div class="type">
+          <p>Typeface</p>
+          <select name="fonts" id="fonts">
+            <option value="font1">Acunim Pro</option>
+            <option value="font2">Comic Suns</option>
+            <option disabled value="font3">Times New Roman</option>
+          </select>
+          <label for="fonts"></label>
+        </div>
+
+        <!-- Dark UI -->
+        <div class="dark">
+          <p>Dark UI</p>
+          <input class="switch" id="switch1" type="checkbox">
+          <label class="for-switch" for="switch1"></label>
+        </div>
+
+        <!-- Weight -->
+        <div class="weight">
+          <p>Weight</p>
+          <input class="check" type="radio" name="font" id="checkbox1">
+          <label class="for-check" for="checkbox1">Regular</label>
+          <input class="check" type="radio" name="font" id="checkbox2">
+          <label class="for-check" for="checkbox2">Bold</label>
+        </div>
+
+        <!-- Color -->
+        <div class="color">
+          <p>Color</p>
+          <input class="tone" type="checkbox" id="blue">
+          <label class="for-tone blue" for="blue"></label>
+          <input class="tone" type="checkbox" id="cyan">
+          <label class="for-tone cyan"  for="cyan"></label>
+          <input class="tone" type="checkbox" id="purple">
+          <label class="for-tone purple"  for="purple"></label>
+          <input class="tone" type="checkbox" id="yellow">
+          <label class="for-tone yellow"  for="yellow"></label>
+          <input class="tone" type="checkbox" id="orange">
+          <label class="for-tone orange"  for="orange"></label>
+        </div>
+
+        <!-- Size -->
+        <div class="size">
+          <p>Size</p>
+          <input type="range">
+          <div class="little">A</div>
+          <div class="big">A</div>
+        </div>
+      </div>
+
+      <!-- Side bar -->
+      <div class="side-bar">
+          <img class="brush" src="./assets/images/artistic-brush.png" alt="image1">
+          <img class="user" src="./assets/images/user-icon.png" alt="">
+          <img class="sms" src="./assets/images/sms-speech-bubble.png" alt="">
+          <img class="computer" src="./assets/images/computer-screen.png" alt="">
+      </div>
+    </div>
+  </form>
+</body>
+
+</html>

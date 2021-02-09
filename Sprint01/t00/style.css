@@ -1,0 +1,13 @@
+img {
+    height: 300px;
+    width: 500px;
+    float: left;
+    margin: 0 7px 5px 0;
+    border-radius: 3px;
+}
+
+@media print {
+    img {
+        float: none;
+    }
+}

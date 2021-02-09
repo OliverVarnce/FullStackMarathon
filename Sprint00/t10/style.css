@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+.wraper {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.item {
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    width: 115px;
+    height: 160px;
+    margin-right: 7px;
+    position: relative;
+    float: left;
+    background: #fff;
+}
+
+.item:hover {
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+
+.date {
+    background: #4095b5;
+    color: #fff;
+    position: relative;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.temp {
+    font-size: 2em;
+    font-weight: 400;
+    margin-top: 90px;
+}
+
+.sun {
+    background: url(assets/images/sun.jpg) 0px 30px no-repeat;
+}
+
+.snow {
+    background: url(assets/images/snow.jpg) 0px 30px no-repeat;
+}
+
+.blizzard {
+    background: url(assets/images/blizzard.jpg) 0px 30px no-repeat;
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,21 @@
+.guand {
+    width: 250px;
+}
+
+.wrapper {
+    position: absolute;
+    top: 500px;
+}
+
+.men img {
+    width: 80px;
+}
+
+.men {
+    width: 500px;
+}
+
+.guand:hover ~ .men:nth-child(even) img:nth-child(odd),
+.guand:hover ~ .men:nth-child(odd) img:nth-child(even){
+    visibility: hidden;
+}

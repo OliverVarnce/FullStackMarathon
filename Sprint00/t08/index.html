@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="t09. Superhero application">
+    <title>Superhero application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Superhero Form</h1>
+<div>
+    <form action="#" method="POST">
+        <fieldset>
+            <legend>About the Superhero</legend>
+            <p>
+                Real Name <input placeholder="Superhero real name" type="text">
+                Superhero Name <input placeholder="Superhero alias" type="text">
+                Age <input type="number" min="1" max="999">
+            </p>
+            <p>
+                About <textarea placeholder="Information about the superhero, max 500 symbols" name="text" cols="70" rows="5" minlength="1" maxlength="500"></textarea>
+            </p>
+            <p>
+                Photo <input type="file">
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend>Powers</legend>
+            <p>
+                <input type="checkbox"> Telekinesis
+                <input type="checkbox"> Super strength or speed
+                <input type="checkbox"> Shapeshifting
+                <input type="checkbox"> Flight
+                <input type="checkbox"> Elemental control
+                <input type="checkbox"> Other
+            </p>
+            <p>
+                Level of control <input type="range" value="1" min="1" max="10">
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend>Origin of Powers</legend>
+            <p>
+                <input type="radio"> Unknown
+                <input type="radio"> Freak lab accident
+                <input type="radio"> Chosen by ancient wise being
+                <input type="radio"> The superhero is not human
+                <input type="radio"> Other
+            </p>
+        </fieldset>
+        <p>
+            <button type="reset">CLEAR</button>
+            <button type="submit">SEND</button>
+        </p>
+    </form>
+</div>
+</body>
+</html>

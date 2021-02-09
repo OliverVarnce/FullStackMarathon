@@ -1,0 +1,265 @@
+/*========General setings========*/
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+}
+
+.window {
+  width: 900px;
+  height: 700px;
+  margin: 0 auto;
+  border: none;
+  background-color: #404751;
+  position: relative;
+}
+
+.settings {
+  width: 85%;
+  height: 600px;
+  display: inline-block;
+  margin: 45px 0 0 15px;
+  border: 2px solid #808080;
+  position: absolute;
+}
+
+div > p,
+div > .for-switch {
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  color: #D3D3D3;
+}
+
+/*=========Typeface===========*/
+#fonts {
+  background: #333a41;
+  color: #cbcbcc;
+  border: 1px solid #BFC0C2;
+  appearance: none;
+  background: #363d48;
+  font-size: 15px;
+  margin: 20px 0 0 45px;
+  padding: 0 0 0 10px;
+  height: 30px;
+  width: 250px;
+}
+
+.fonts > label {
+  border-right: 2px solid #c1c1c2;
+  border-bottom: 2px solid #c1c1c2;
+  transform: translate(-2em, 0.5em) rotate(45deg);
+  position: absolute;
+  width: 12px;
+  height: 12px;
+}
+
+.type p {
+  margin: 60px 0 0 45px;
+}
+
+/*==========Dark UI===========*/
+.for-switch {
+  right: -650px;
+  cursor: pointer;
+  position: relative;
+}
+
+.for-switch::after {
+  content: "";
+  width: 50px;
+  height: 25px;
+  background-color: #333A43;
+  border-radius: 15px;
+  position: absolute;
+  top: -22px;
+}
+
+.for-switch::before {
+  content: "";
+  width: 19px;
+  height: 19px;
+  background-color: #60B9A5;
+  border-radius: 50%;
+  position: absolute;
+  top: -19px;
+  right: -23px;
+  z-index: 1;
+  transition-duration: 300ms;
+}
+
+.dark p{
+  margin: -16px 0 0 450px;
+}
+
+.switch {
+  display: none;
+}
+
+.switch:checked + .for-switch::after {
+  background-color: #4795EC;
+}
+
+.switch:checked + .for-switch::before {
+  right: -46px;
+}
+
+
+/*=============Weight=============*/
+.weight p {
+  padding: 40px 0 0 45px;
+}
+
+
+.check {
+  display: none;
+}
+
+.for-check {
+  cursor: pointer;
+  position: relative;
+  color: #cbcbcc;
+  margin: 0 0 0 75px;
+}
+
+.for-check::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  background-color: #323A43;
+  border: 1px solid #CECFCF;
+  left: -30px;
+}
+
+.check:checked + .for-check::before {
+  content: "\2713";
+  color: #5EB9A5;
+  text-align: center;
+}
+
+
+/*==========Color============*/
+.color p {
+  margin: -47px 0 0 450px;
+}
+
+.tone {
+  display: none;
+}
+
+.for-tone {
+  cursor: pointer;
+  position: relative;
+  margin: 0 55px 0 0;
+}
+
+.for-tone::before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  border: 1px solid #7D7E81;
+  border-radius: 100%;
+  left: 450px;
+  bottom: -25px;
+}
+
+.tone:checked + .for-tone::before {
+  content: "\2713";
+  color: #FEFFFF;
+  text-align: center;
+}
+
+.blue::before {
+  background-color: #4875B9;
+}
+
+.cyan::before {
+  background-color: #5EB9A5;
+}
+
+.purple::before {
+  background-color: #CF62CA;
+}
+
+.yellow::before {
+  background-color: #DDD967;
+}
+
+.orange::before {
+  background-color: #D2815F;
+}
+
+
+/*===========Size=============*/
+.size p {
+  padding: 60px 0 0 45px;
+}
+
+input[type=range]  {
+  width: 200px;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+  position: absolute;
+  margin: 50px 0 0 45px;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  height: 2px;
+  background-color: #323A43;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  background: #5EB9A5;
+  border-radius: 100%;
+  cursor: pointer;
+  width:15px;
+  height: 15px;
+  -webkit-appearance: none;
+  margin-top: -7px;
+}
+
+.little {
+  margin: 90px 0 0 45px;
+  color: #FFFFFF;
+}
+
+.big {
+  margin: -18px 0 0 240px;
+  color: #FFFFFF;
+  font-size: 30px;
+}
+
+
+/*==========Side bar==========*/
+
+.side-bar {
+  display: inline-block;
+  width: 70px;
+  height: 380px;
+  margin: 150px 0 0 780px;
+  background-color: #333A43;
+  border-radius: 0 30px 30px 0;
+}
+
+.brush {
+  width: 60px;
+  padding: 30px 0 0 10px;
+}
+
+.user {
+  width: 60px;
+  padding: 30px 0 0 10px;
+}
+
+.sms {
+  width: 60px;
+  padding: 30px 0 0 10px;
+}
+
+.computer {
+  width: 60px;
+  padding: 30px 0 0 10px;
+}
