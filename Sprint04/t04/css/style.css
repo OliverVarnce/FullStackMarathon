@@ -1,0 +1,83 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    text-align: center;
+}
+.container{
+    margin: 0 auto;
+    background-color: rgb(233, 233, 233);
+    width: 1170px;
+    display: flex;
+    border-radius: 10px;
+}
+.film__name__container{
+    width: 200px;
+    align-items: center;
+    margin: 10px 0;
+    border-right: 1px solid white;
+}
+.film__name{
+    padding: 10px 0;
+    cursor: pointer;
+    margin: 10px;
+    text-align: center;
+    transition: .3s ease all;
+}
+.film__name:active{
+    background-color: rgb(5, 67, 109);
+}
+
+#active{
+    border-left:  3px solid rgb(0, 153, 255);
+}
+.film__desc__container{
+    margin: 40px 15px 100px 40px;
+    display: flex;
+    width: 600px;
+    justify-content: space-between;
+
+}
+.film__title{
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+.film__date{
+    font-size: .7rem;
+}
+.actors__container{
+    margin-top: 10px;
+    display: flex;
+    color: white;
+    justify-content: space-between;
+}
+.actor{
+    padding: 5px 10px;
+    margin: 10px 10px;
+    background-color: rgb(0, 153, 255);
+    border-radius: 10px;
+}
+.film__name:hover{
+    background-color: rgba(0, 153, 255, 0.534);
+}
+.description{
+    width: 600px;
+}
+.actor:nth-child(1){
+    margin-left: 0px;
+}
+.actor:nth-last-child {
+    margin-right: 0;
+}
+.film__poster{
+    max-width: 300px;
+    margin-left: 30px;
+    max-height: 400px;
+    float: right;
+}
+@media screen and (max-width: 1140px){
+    .container{
+        margin: 0 30px;
+    }
+}

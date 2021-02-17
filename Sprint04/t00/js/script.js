@@ -3,7 +3,7 @@
 let counter = 1;
 
 function transformation() {
-    if (counter % 2) {
+    if (counter === 1) {
         let button = document.getElementById("btn");
         button.style.background = "#70964b";
 
@@ -17,9 +17,11 @@ function transformation() {
         lab.style.background = "#ffb300";
 
         let hero = document.getElementById("hero");
+        hero.textContent = "Bruce Banner";
         hero.style.fontSize = "60px";
         hero.style.letterSpacing = '2px';
-        hero.textContent = "Bruce Banner";
+        let button = document.getElementById("btn");
+        button.removeAttribute("style");
 
         counter = 1;
     }
