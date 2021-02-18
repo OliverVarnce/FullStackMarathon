@@ -1,0 +1,46 @@
+.main {
+    padding: 30px;
+}
+
+.weather {
+    width: 100%;
+    border: 0;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 0 12px -1px rgba(0,0,0,0.75);
+    background: #f6f9f6;
+}
+
+.location {
+    background: #0685d7;
+    padding: 5px;
+    text-align: center;
+    color: #fff;
+    border-radius: 10px 10px 0 0;
+}
+
+.days {
+    padding: 25px 25px;
+    align-self: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.date {
+    border-bottom: 1px solid #b8f2f2;
+}
+
+.day {
+    width: 200px;
+    text-align: center;
+    margin-bottom: 10px;
+    position: relative;
+    float: left;
+}
+
+.state {
+    width: 90%;
+    margin: 0 auto;
+}

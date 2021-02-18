@@ -1,3 +1,5 @@
+'use strict'
+
 let rombsArea = document.getElementById('container');
 let state = {
     offsetX: 0,
@@ -33,7 +35,7 @@ rombsArea.addEventListener('mouseup', () => {
 
 rombsArea.addEventListener('mousemove', e => {
     if (state.target) {
-        state.target.style.left = (e.pageX - state.offsetX) + 'px';
         state.target.style.top = (e.pageY - state.offsetY) + 'px';
+        state.target.style.left = (e.pageX - state.offsetX) + 'px';
     }
 });

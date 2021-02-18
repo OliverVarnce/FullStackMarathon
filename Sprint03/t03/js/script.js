@@ -63,7 +63,7 @@ let hero = new Superhero('Henry', 'Cavill', 'man', 35, 500);
 
 function humanProperties() {
     imgAvatar.src = 'http://humanorigins.si.edu/sites/default/files/styles/grid_thumbnail/public/images/landscape/erectus_JC_Recon_Head_CC_f_l.jpg'
-    properties.innerHTML =`
+    properties. HTML =`
     <p>First name: ${human.firstName}</p>
     <p>Last name: ${human.lastName}</p>
     <p>Gender: ${human.gender}</p>
@@ -87,7 +87,7 @@ humanProperties();
 
 function heroProperties() {
     imgAvatar.src = 'https://i.guim.co.uk/img/media/fb18c7fae89eba7df3adc05dd73868c9919e3abb/0_131_4000_2400/master/4000.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=ec9617bbb167fce941f33c09ae4937a3'
-    properties.innerHTML = `
+    properties. HTML = `
     <p>First name: ${hero.firstName}</p>
     <p>Last name: ${hero.lastName}</p>
     <p>Gender: ${hero.gender}</p>

@@ -1,0 +1,70 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    margin: 10px;
+}
+
+.container{
+    margin: 50px auto;
+    padding: 10px;
+    max-width: 600px;
+}
+
+.apply{
+    background:rgb(8, 156, 255);
+    padding: 10px 15px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: .1s ease all;
+    outline:none;
+}
+
+.apply:hover{
+    background-color:rgb(25, 130, 201);
+}
+
+.apply:active{
+    background-color:rgb(9, 74, 117);
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.input__container, .output__container{
+    margin-top: 20px;
+    background-color:rgb(240, 240, 240);
+    padding: 30px 20px 30px 20px;
+    border-radius: 5px;
+}
+
+.title{
+    color: rgb(46, 46, 80);
+    margin-bottom: 10px;
+}
+
+input,textarea{
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    outline-color: rgb(8, 156, 255);
+    width:100%;
+}
+
+.notes{
+    padding:10px;
+    min-height: 1.1rem;
+    background-color:rgb(255, 255, 255);
+    width: calc(100% - 10px);
+    border-radius: 5px;
+    overflow-x:hidden;
+    word-wrap: break-word;
+}

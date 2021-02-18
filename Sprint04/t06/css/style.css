@@ -7,7 +7,6 @@ h1 {
 }
 
 .bullet {
-
     margin: .25rem 0;
     font-size: 3.75rem;
     color: #f9f9f9;
@@ -15,8 +14,6 @@ h1 {
 }
 
 img {
-    object-fit: contain;
-    -o-object-fit: contain;
     max-width: 100%;
     margin: auto;
     transition: opacity .75s ease-out;
@@ -31,4 +28,24 @@ img {
 .content-item {
     min-height: 100vh;
     padding: 0 2.5rem;
+}
+
+.info {
+    position: fixed;
+    right: 35px;
+    padding: 5px 25px;
+    background: #ef0501;
+    border-radius: 15px;
+}
+
+.x-center img {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    width: 600px;
+    height: 370px;
+}
+.y-center img {
+    display: block;
+    margin: 35px auto;
 }

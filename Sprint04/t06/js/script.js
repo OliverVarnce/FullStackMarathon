@@ -1,7 +1,9 @@
 'use strict';
+let counter = 0;
 
 !function (d) {
     let lazy = {};
+
 
     lazy.isVisible = function(el) {
         let coords = el.getBoundingClientRect();
@@ -16,27 +18,21 @@
             return;
         }
         if (!item.hasAttribute("data-js-loaded")) {
-            let src = item.getAttribute("data-js-source");
-            if (src) { // если атрибут data-source присутствует
+            let src = item.getAttribute("data-src");
+            if (src) { // если атрибут data-src присутствует
                 item.src = src;
+
                 item.setAttribute("data-js-loaded", "");
-                item.removeAttribute("data-js-source");
-                item.onerror = function() { // обработка ошибок загрузки
-                    console.error("загрузка источника не удалась (элемент: " + item.tagName + ", путь: " + item.src + ")");
-                };
-                setTimeout(function() { // удаление обработчика ошибок
-                    item.onerror = null;
-                }, 3000);
+                item.removeAttribute("data-src");
             }
-            if (callback) callback(item); // вызов callback, если необходимо
+            if (callback) callback(item);
         }
     };
 
     lazy.init = function(settings) {
-
         // настройки по умолчанию
         settings = Object.assign({}, {
-            items:    "[data-js-source]", // селектор элементов lazy-load
+            items:    "[data-src]", // селектор элементов lazy-load
             on:       "click",         // click, view, hover
             callback: false,           // функция, вызываемая после загрузки источника
         }, settings);
@@ -72,9 +68,8 @@
 
 
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", () => {
 
-    // lazy-load
     lazy.init({
         on: "view", // при попадании во viewport
         callback: function(el) { // функция при загрузке
@@ -83,13 +78,24 @@ document.addEventListener("DOMContentLoaded", function() {
                 el.classList.remove("loading");
                 el.onload = null;
             }
+            counter++;
+            console.log(counter);
+            loadCounter(counter);
         }
     });
-
-    // отключение кеширования оригинальных картинок
-    let images = document.querySelectorAll("[data-source]");
-    images.forEach(function(el) {
-        let source = el.getAttribute("data-source");
-        el.setAttribute("data-source", source + "?" + Math.random());
-    })
 });
+
+
+
+function loadCounter(count) {
+    let imgarr = document.getElementsByTagName("img").length;
+    let info = document.querySelector('.info');
+
+    info.innerHTML = `
+        ${count} images loaded from ${imgarr}
+    `;
+
+    if (count === imgarr) {
+        info.style.background = "#90ee91";
+    }
+}
