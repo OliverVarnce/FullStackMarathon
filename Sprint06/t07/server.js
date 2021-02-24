@@ -22,12 +22,11 @@ app.get("/", urlencodedParser, function (req, res) {
 });
 app.post("/", urlencodedParser, (req, res) => {
     if(!req.body) return res.sendStatus(400);
-    console.log(JSON.stringify(req.body));
 
-if (JSON.stringify(req.body === '{"1":"2"}') || JSON.stringify(req.body === '{"1":"1"}')) {
-        res.render("index.html", { answer: 'Shame on you! Go and watch Avengers!' })
-    } else {
+    if (req.body["1"] === '3') {
         res.render("index.html", { answer: 'U are true!' })
+    } else {
+        res.render("index.html", { answer: 'Shame on you! Go and watch Avengers!' })
     }
 });
 

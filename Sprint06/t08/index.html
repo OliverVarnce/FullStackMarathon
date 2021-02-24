@@ -1,14 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>A new set</title>
-    <meta name="description" content="t08. A new set">
+<style>
+    .code {
+        background: #ccc;
+        border: 1px solid #2d2d2d;
+        padding: 5px;
+    }
+</style>
 </head>
+
 <body>
-<h1>What Thanos did for the Soul Stone?</h1>
+<h1>New Avenger application</h1>
+<div class="code">
+    <code>
+    <h3>{{ method}}</h3>
+        Array<br>
+        (<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;[name] => {{name}} <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;[email] => {{email}}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;[age] => {{age}}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;[description] => {{about}}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;[photo] => {{photo}}<br>
+        )<br>
+        <p></p>
+    </code>
+
+</div>
 <form action="/" method="POST">
-   
+    <fieldset>
+        <legend>About candidate</legend><br>
+        <span>Name</span>
+        <label>
+            <input type="text" name="Name"
+                   placeholder="Tell your name" size="18" autofocus>
+            <span>Superhero name</span>
+            <input type="text" name="email"
+                   placeholder="Tell your e-mail" size="18">
+            <span>Age</span>
+            <input type="number" name="age" min="1" max="999" step="1"
+                   size="5"><br><br>
+            <span>About</span>
+            <textarea name="about" id="about" cols="70" rows="5"
+                      maxlength="500"
+                      placeholder="Tell about yourself, max 500 symbols">
+                </textarea><br><br>
+            <span>Your photo:</span>
+            <input type="file" name="photo">
+        </label>
+        <p></p>
+    </fieldset><br>
+    <button type="reset">CLEAR</button>
+    <button type="submit">SEND</button>
 </form>
 </body>
+
 </html>
