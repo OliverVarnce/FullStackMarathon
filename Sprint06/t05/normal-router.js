@@ -5,7 +5,6 @@ module.exports.calculateTime = function calculateTime() {
     return date
 }
 
-
 let dateNow = new Date ();
 
 Date.prototype.years = function() {

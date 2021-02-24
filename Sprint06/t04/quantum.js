@@ -13,5 +13,3 @@ module.exports.calculateTime = function calculateTime() {
 
     return result;
 }
-
-calculateTime();

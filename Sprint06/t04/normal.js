@@ -5,11 +5,10 @@ module.exports.calculateTime = function calculateTime() {
     return date
 }
 
-
 let dateNow = new Date ();
 
 Date.prototype.years = function() {
-    return -(this.getYear() - dateNow.getYear());
+    return (dateNow.getFullYear() - this.getFullYear());
 }
 
 Date.prototype.months = function() {
@@ -19,3 +18,4 @@ Date.prototype.months = function() {
 Date.prototype.days = function() {
     return -(this.getDate() - dateNow.getDate());
 }
+
