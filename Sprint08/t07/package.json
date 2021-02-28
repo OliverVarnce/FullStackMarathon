@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "read-config": "^2.0.0",
+    "sequelize": "^6.5.0"
+  }
+}

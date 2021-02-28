@@ -1,0 +1,9 @@
+{
+  db: {
+    driver: "mysql",
+    hostname: "localhost",
+    name: "ucode_web",
+    user: "ovoitenko",
+    pass: "securepass",
+  }
+}
