@@ -46,12 +46,12 @@ const mailer = message => {
     })
 }
 
-function sendRemindEmail(email) {
+function sendRemindEmail(email, pass) {
     const message = {
         to: email,
         subject: 'password reset',
         html: `<h2>Для смены пароля перейдите по ссылке <h2>
-                    <p>Ваш пароль: <strong>${email}</strong></p>`
+                    <p>Ваш пароль: <strong>${pass}</strong></p>`
     }
     mailer(message)
 }
@@ -100,12 +100,11 @@ app.post('/', ifLoggedin, [
     const {email} = req.body;
     if(validation_result.isEmpty()){
         const userEml = user.getUserByLogin(email)
-        console.log(userEml)
         return userEml
 
             .then((userEml) => {
                 if (userEml !== undefined) {
-                    //sendRemindEmail(userEml.password);
+                    sendRemindEmail(req.body.email, userEml.password);
                     res.status(201).send("Your password send to your email!")
                 } else {
                     res.render('remind',{
