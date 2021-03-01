@@ -1,6 +1,6 @@
 {
   db: {
-    driver: "mysql",
+   s
     hostname: "localhost",
     name: "ucode_web",
     user: "ovoitenko",

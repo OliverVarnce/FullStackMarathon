@@ -1,15 +1,22 @@
+'use strict';
+
 const express = require('express');
 const path = require('path');
 const cookieSession = require('cookie-session');
 const bcrypt = require('bcryptjs');
-const dbConnection = require('./db');
 const { body, validationResult } = require('express-validator');
+const User = require('./models/user');
+const ejs = require('ejs')
 
 const app = express();
+
 app.use(express.urlencoded({extended:false}));
 
-app.set('views', path.join(__dirname,'views'));
-app.set('view engine','ejs');
+app.set('views', __dirname + '/views');
+app.engine('html', ejs.renderFile);
+app.set('view engine', 'html');
+
+app.use('/public', express.static('public'));
 
 app.use(cookieSession({
     name: 'session',
@@ -31,22 +38,21 @@ const ifLoggedin = (req,res,next) => {
     next();
 }
 
-app.get('/', ifNotLoggedin, (req,res,next) => {
-    dbConnection.execute("SELECT `full_name` FROM `users` WHERE `id`=?",[req.session.userID])
-        .then(([rows]) => {
-            res.render('home',{
-                full_name:rows[0].full_name
-            });
-        });
+let user = new User;
+
+app.get('/', ifNotLoggedin, (req, res, next) => {
 
 });
 
 app.post('/register', ifLoggedin,
     [
         body('user_email','Invalid email address!').isEmail().custom((value) => {
-            return dbConnection.execute('SELECT email FROM users WHERE email=?', [value])
-                .then(([rows]) => {
-                    if(rows.length > 0){
+            //return dbConnection.execute('SELECT email FROM users WHERE email=?', [value])
+            const userEm = user.getUserByEmail([value])
+            console.log(userEm)
+            return userEm
+                .then((userEm) => {
+                    if(userEm){
                         return Promise.reject('This E-mail already in use!');
                     }
                     return true;
@@ -56,9 +62,11 @@ app.post('/register', ifLoggedin,
             return value == req.body.user_pass;
         }),
         body('login','Invalid login!').custom((value) => {
-            return dbConnection.execute('SELECT login FROM users WHERE login=?', [value])
-                .then(([rows]) => {
-                    if(rows.length > 0){
+            const userLogin = user.getUserByLogin([value])
+            console.log(userLogin)
+            return userLogin
+                .then((userLogin) => {
+                    if(userLogin){
                         return Promise.reject('This Login already in use!');
                     }
                     return true;
@@ -75,7 +83,7 @@ app.post('/register', ifLoggedin,
         const {user_name, login, user_pass, user_email} = req.body;
         if(validation_result.isEmpty()){
             bcrypt.hash(user_pass, 12).then((hash_pass) => {
-                dbConnection.execute("INSERT INTO users(full_name, login, email, password) VALUES(?,?,?,?)",[user_name, login, user_email, hash_pass])
+                user.createUser(login, hash_pass, user_name, user_email)
                     .then(result => {
                         res.send(`your account has been created successfully, Now you can <a href="/">Login</a>`);
                     }).catch(err => {
@@ -85,8 +93,7 @@ app.post('/register', ifLoggedin,
                 .catch(err => {
                     if (err) throw err;
                 })
-        }
-        else{
+        } else {
             let allErrors = validation_result.errors.map((error) => {
                 return error.msg;
             });
@@ -101,4 +108,4 @@ app.use('/', (req,res) => {
     res.status(404).send('<h1>404 Page Not Found!</h1>');
 });
 
-app.listen(3000, () => console.log("Server is Running..."));
+app.listen(8080, () => console.log("Server is Running..."));
