@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register</title>
+    <link rel="stylesheet" href="/public/style.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container p-5">
+    <div class="col-sm-6 bg-secondary rounded border py-4 offset-sm-2">
+        <h2 class="text-center text-white">Register</h2>
+
+        <form action="/register" method="POST" novalidate>
+            <div class="form-group">
+                <label for="_rname" class="text-white">Full Name</label>
+                <input type="text" name="user_name" id="_rname" class="form-control" placeholder="Name" value="<%= (locals.old_data) ? old_data.full_name : ''; %>" required>
+            </div>
+            <div class="form-group">
+                <label for="_rlogin" class="text-white">Login</label>
+                <input type="text" name="login" id="_rlogin" class="form-control" placeholder="Username" value="<%= (locals.old_data) ? old_data.login : ''; %>" required>
+            </div>
+            <div class="form-group">
+                <label for="_remail" class="text-white">Email address</label>
+                <input type="email" name="user_email" id="_remail" class="form-control" placeholder="Email" value="<%= (locals.old_data) ? old_data.user_email : ''; %>" required>
+            </div>
+            <div class="form-group">
+                <label for="_rpass" class="text-white">Password</label>
+                <input type="password" name="user_pass" id="_rpass" class="form-control" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+                <label for="_confirm_pass" class="text-white">Confirm assword</label>
+                <input type="password" name="confirm_user_pass" id="_confirm_pass" class="form-control" placeholder="Password" required>
+            </div>
+            <% if (locals.register_error) {
+            register_error.forEach(function(error_msg){ %>
+                <div class="alert alert-danger" role="alert"><%= error_msg %></div>
+            <% });
+            } %>
+            <button type="submit" class="btn btn-success">Sign Up</button>
+            <a class="col-sm-3 float-right text-white" href="/login">Sign In</a>
+        </form>
+
+    </div>
+</div>
+</div>
+</body>
+</html>

@@ -56,6 +56,19 @@ function sendRemindEmail(email, pass) {
     mailer(message)
 }
 
+function passGenerator() {
+    let result       = '';
+    let words        = '0123456789abcdefghiklmnopqrstuxyzABCDEFGHIGKLMNOPQRSTUXYZ';
+    let max_position = words.length - 1;
+    let position = 0;
+    for( let i = 0; i < 10; ++i ) {
+        position = Math.floor( Math.random() * max_position );
+        result = result + words.substring(position, position + 1);
+    }
+    return  result;
+
+}
+
 const ifNotLoggedin = (req, res, next) => {
     if(!req.session.isLoggedIn){
         return res.render('remind');
@@ -99,13 +112,23 @@ app.post('/', ifLoggedin, [
     const validation_result = validationResult(req);
     const {email} = req.body;
     if(validation_result.isEmpty()){
-        const userEml = user.getUserByLogin(email)
+        const userEml = user.getUserByEmail(email)
         return userEml
 
             .then((userEml) => {
                 if (userEml !== undefined) {
-                    sendRemindEmail(req.body.email, userEml.password);
-                    res.status(201).send("Your password send to your email!")
+                    let newPass = passGenerator()
+                    // bcrypt.hash(newPass, 12).then((hash_pass) => {
+                    //     const us = user.updatePass(req.body.email,hash_pass)
+                    //     console.log(us)
+                    //     })
+                    bcrypt.hash(newPass, 12).then((hash_pass) => {
+                        user.updatePass(req.body.email,hash_pass)
+                        sendRemindEmail(req.body.email, newPass);
+                    })
+                        .then(result => {
+                            res.status(201).send("Your password send to your email!")
+                        })
                 } else {
                     res.render('remind',{
                         login_errors:['Invalid email']

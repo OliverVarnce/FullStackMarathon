@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+<div class="container p-5">
+    <div class="row">
+        <div class="col-sm-6 bg-secondary rounded border py-4 offset-sm-3">
+            <h2 class="text-center" class="text-white">Login</h2>
+            <form action="/login" method="POST">
+                <div class="form-group">
+                    <label for="_login" class="text-white">Login</label>
+                    <input type="text" name="user_login" id="_login" class="form-control" placeholder="Login" required>
+                </div>
+                <div class="form-group">
+                    <label for="_pass" class="text-white">Password</label>
+                    <input type="password" name="user_pass" id="_pass" class="form-control" placeholder="Password" required>
+                </div>
+                <% if (locals.login_errors) {
+                login_errors.forEach(function(error_msg){ %>
+                <div class="alert alert-danger" role="alert"><%= error_msg %></div>
+                <% });
+                } %>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <a class="col-sm-3 float-right text-white" href="/register">Sign Up</a>
+                <a class="col-sm-3 float-right text-white" href="/forgot">Forgot password?</a>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

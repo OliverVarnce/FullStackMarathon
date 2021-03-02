@@ -10,7 +10,7 @@
     <div class="row">
         <div class="col-sm-6 bg-secondary rounded border py-4 offset-sm-3">
             <h2 class="text-center" class="text-white">Remind your password</h2>
-            <form action="" method="POST">
+            <form action="/remind" method="POST">
                 <div class="form-group">
                     <label for="_email" class="text-white">Email</label>
                     <input type="text" name="email" id="_email" class="form-control" placeholder="Enter your E-mail" required>
@@ -20,7 +20,8 @@
                 <div class="alert alert-danger" role="alert"><%= error_msg %></div>
                 <% });
                 } %>
-                <button type="submit" class="btn btn-primary">Login</button>
+                <button type="submit" class="btn btn-primary">Send</button>
+                <a class="col-sm-3 float-right text-white" href="/login">Return</a>
             </form>
         </div>
     </div>
