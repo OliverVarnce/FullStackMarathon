@@ -27,7 +27,7 @@ app.use(cookieSession({
 }));
 
 let transporter = nodemailer.createTransport({
-        host: 'smtp.ukr.net',
+        host: 'smtp.host.net',
         port: 465 ,
         secure: true,
         auth: {
@@ -36,7 +36,7 @@ let transporter = nodemailer.createTransport({
         }
     },
     {
-        from: 'Mailer test <olex2004@ukr.net>',
+        from: 'Mailer test <ol24@kr.net>',
     })
 
 const mailer = message => {
